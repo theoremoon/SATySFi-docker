@@ -1,8 +1,17 @@
 FROM ocaml/opam2:ubuntu-18.04-ocaml-4.07 as builder
 
 USER root
-RUN apt update &&\
-    apt -y --no-install-recommends install build-essential autoconf git m4 unzip wget ca-cacert ca-certificates ruby
+RUN apt update && \
+    apt install -y --no-install-recommends \
+        build-essential \
+        autoconf \
+        git \
+        m4 \
+        unzip \
+        wget \
+        ca-cacert \
+        ca-certificates \
+        ruby
 
 USER opam
 WORKDIR /home/opam
