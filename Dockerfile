@@ -3,15 +3,15 @@ FROM ocaml/opam2:ubuntu-18.04-ocaml-4.07 as builder
 USER root
 RUN apt update && \
     apt install -y --no-install-recommends \
-        build-essential \
         autoconf \
-        git \
-        m4 \
-        unzip \
-        wget \
+        build-essential \
         ca-cacert \
         ca-certificates \
-        ruby
+        git \
+        m4 \
+        ruby \
+        unzip \
+        wget
 
 USER opam
 WORKDIR /home/opam
